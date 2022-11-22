@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.24d02da0675fa724036d.js","mappings":"qEAAA,6BACA,uD","sources":["webpack:///./src/script.js"],"sourcesContent":["import(\"./style.css\")\nimport(\"./App.js\")"],"names":[],"sourceRoot":""}
