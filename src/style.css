@@ -1,3 +1,5 @@
+
+
 *
 {
     margin: 0;
@@ -16,4 +18,48 @@ body
     top: 0;
     left: 0;
     outline: none;
+}
+
+.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    background-color: #00000044;
+    padding: 8px 14px 8px 6px;
+    border-radius: 8px;
+    color: white
+}
+
+.go-back__arrow {
+    fill: white;
+}
+
+.go-back__link {
+    font-family: "Arial Narrow", sans-serif;
+    padding-top: 1px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.go-back__link:visited {
+    color: inherit;
+}
+
+.go-back__link:focus-visible {
+    outline: none;
+}
+.go-back__link:focus-visible::before {
+  outline: darkblue auto 1px
+}
+
+.go-back__link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }

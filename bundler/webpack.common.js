@@ -74,16 +74,6 @@ module.exports = {
                 },
             },
 
-            // JS
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use:
-                [
-                    'babel-loader'
-                ]
-            },
-
             // CSS
             {
                 test: /\.css$/,
@@ -91,6 +81,16 @@ module.exports = {
                 [
                     MiniCSSExtractPlugin.loader,
                     'css-loader'
+                ]
+                },
+            
+            // JS
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use:
+                [
+                    'babel-loader'
                 ]
             },
 

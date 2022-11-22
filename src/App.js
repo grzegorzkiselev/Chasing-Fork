@@ -1,9 +1,9 @@
 import * as THREE from "three"
-import * as YUKA from 'yuka';
+import * as YUKA from 'yuka'
 import { WiggleBone } from './utils/WiggleBones.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { EntityManager } from "yuka";
+import { EntityManager } from "yuka"
 
 const sizes = {
   width: window.innerWidth,
