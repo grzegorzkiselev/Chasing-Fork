@@ -26,6 +26,16 @@
             padding: 8px 14px 8px 6px;
             border-radius: 8px;
             color: white !important;
+            filter: blur(0.6px);
+            transition: all 300ms ease-in-out;
+        }
+
+        .go-back:hover,
+        .go-back:focus,
+        .go-back:focus-visible {
+            filter: blur(0px);
+            background-color: #00000088;
+            transition: all 300ms ease-in-out;
         }
 
         a,
@@ -53,8 +63,10 @@
             outline: none;
         }
 
-        .go-back__link:focus-visible::before {
-            outline: darkblue auto 1px
+        .go-back__link:focus-visible::before:has(> .go-back) {
+            background-color: #00000088;
+            transition: all 300ms ease-in-out;
+            outline: darkblue auto 1px;
         }
 
         .go-back__link::before {
