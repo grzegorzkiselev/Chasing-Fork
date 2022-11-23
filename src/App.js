@@ -385,18 +385,18 @@ gltfLoader.load('./models/fork.glb', (gltf) => {
 
 const ambientLight = new THREE.AmbientLight(0x606575, 0.4);
 
-const light = new THREE.DirectionalLight(0xffffff, 0.2);
-light.position.set(0, 100, 0)
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(45, 12, 20)
 light.castShadow = true
 light.receiveShadow = true
 light.shadow.mapSize.width = 2048
 light.shadow.mapSize.height = 2048
 light.shadow.camera.top = 10
-light.shadow.camera.left = -10
-light.shadow.camera.right = 10
+light.shadow.camera.left = -15
+light.shadow.camera.right = 15
 light.shadow.camera.bottom = -10
 light.shadow.camera.near = 0.5
-light.shadow.camera.far = 102
+light.shadow.camera.far = 200
 
 const lightHelper = new THREE.DirectionalLightHelper(light)
 const lightShadowsHelper = new THREE.CameraHelper(light.shadow.camera)
@@ -416,7 +416,7 @@ floor.receiveShadow = true;
 scene.add(floor);
 
 const camera = new THREE.PerspectiveCamera(20, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(18, 36, 18)
+camera.position.set(30, 10, 30)
 camera.rotation.x = Math.PI / 4
 scene.add(camera)
 
@@ -483,6 +483,7 @@ const tick = () => {
     }
     
     controls.update()
+    console.log(camera.position)
     
     renderer.render(scene, camera)
 
@@ -490,40 +491,3 @@ const tick = () => {
 }
 
 tick()
-
-// await loadGLTF('./gltf/mascot/index.gltf', {
-//     renderer: this.$renderer,
-// });
-// this.mesh = scene.getObjectByName('Mascot');
-// this.mesh.castShadow = true;
-// // this.mesh.scale.setScalar(0.25);
-// // this.mesh.position.set(0, 1.2, 0);
-
-// this.rootBone = scene
-//     .getObjectByName('MascotSkinned')
-//     .children.find((c) => c.isBone);
-
-// this.rootBone.scale.setScalar(0.27);
-// this.rootBone.position.set(0, 0.6, 0);
-
-// this.wiggleBones = [];
-// this.rootBone.traverse((obj) => {
-//     if (obj.name === 'Root') return;
-//     if ((obj.isBone && obj.name.match('Leg')) || obj.name.match('Head')) {
-//         const options = obj.name.match('Head') ?
-//             {
-//                 bounceFactor: 0.035,
-//                 maxStretch: 1
-//             } :
-//             {
-//                 bounceFactor: 0.025,
-//                 maxStretch: 0.9
-//             };
-
-//         this.wiggleBones.push(
-//             new WiggleBone(obj, { ...options,
-//                 scene: this.$worldScene
-//             })
-//         );
-//     }
-// });
