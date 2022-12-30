@@ -2,7 +2,7 @@
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
     "dev": "webpack serve --config ./bundler/webpack.dev.js",
-    "deploy": "webpack --config ./bundler/webpack.prod.js && git add . && git commit && git subtree push --prefix dist origin gh-pages"
+    "deploy": "webpack --config ./bundler/webpack.prod.js && git add . && git commit && git push origin && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",

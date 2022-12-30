@@ -39,16 +39,6 @@ const environmentMap = cubeTexureLoader.load([
   "./textures/environmentMaps/cubeMap/pz.jpg",
   "./textures/environmentMaps/cubeMap/nz.jpg"
 ])
-// const background = cubeTexureLoader.load([
-//   "./textures/environmentMaps/sceneBg/px.jpg",
-//   "./textures/environmentMaps/sceneBg/nx.jpg",
-//   "./textures/environmentMaps/sceneBg/py.jpg",
-//   "./textures/environmentMaps/sceneBg/ny.jpg",
-//   "./textures/environmentMaps/sceneBg/pz.jpg",
-//   "./textures/environmentMaps/sceneBg/nz.jpg"
-// ])
-
-// scene.background = background
 
 const sceneBackgroundMaterial = new THREE.ShaderMaterial({
     uniforms: {
@@ -309,16 +299,6 @@ function sync(entity, renderComponent) {
     renderComponent.matrix.copy(entity.worldMatrix);
 }
 
-// const floorGeometry = new THREE.PlaneBufferGeometry(20, 20)
-// const floorMaterial = new THREE.MeshStandardMaterial()
-// material.roughness = 0.7
-// const floor = new THREE.Mesh(floorGeometry, floorMaterial)
-// floor.rotation.x = - Math.PI * 0.5
-// floor.position.y = 0
-// floor.receiveShadow = true
-// floor.castShadow = true
-// scene.add(floor)
-
 const helperGeometry = new THREE.ConeGeometry(0.6, 1, 3);
 helperGeometry.translate(0, 0.51, 0)
 const helperMaterial = new THREE.MeshNormalMaterial()
@@ -371,7 +351,7 @@ gltfLoader.load('./models/fork.glb', (gltf) => {
                 } :
                 {
                     bounceFactor: 5,
-                    maxStretch: 2
+                    maxStretch: 1.1
                 };
             wiggleBones.push(
                 new WiggleBone(obj, { ...options, scene: scene})
